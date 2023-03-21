@@ -31,19 +31,19 @@ export default function Navbar() {
           <div
             className={joinClassName(
               navbar || open ? "bg-landingPage" : "bg-transparent",
-              "fixed top-0 left-0 right-0 z-50 "
+              " fixed top-0 left-0 right-0 z-50 "
             )}
           >
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-16">
                 <div className="flex-shrink-0">
-                  <Link href={"/"}>
+                  <Link href={"/"} className={"flex"}>
                     <Image
                       className={"h-16 w-auto mt-2 block lg:hidden px-2"}
                       width={64}
                       height={64}
-                      src="https://cdn.boostingforge.com/static/logo.webp"
-                      alt="BoostingForge logo"
+                      src="https://cdn.vyroai.com/static/logo.webp"
+                      alt="vyroai logo"
                       priority={true}
                     />
                     <Image
@@ -53,8 +53,8 @@ export default function Navbar() {
                       )}
                       width={64}
                       height={64}
-                      src="https://cdn.boostingforge.com/static/logo.webp"
-                      alt="BoostingForge logo"
+                      src="https://cdn.vyroai.com/static/logo.webp"
+                      alt="vyroai logo"
                       priority={true}
                     />
                   </Link>
@@ -77,7 +77,7 @@ export default function Navbar() {
                   <div className="flex items-center">
                     <Link
                       href={"/dashboard"}
-                      className="inline-flex items-center px-10 py-2 border border-transparent text-base font-semibold rounded-full shadow-sm text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:scale-105 transition duration-300 ease-in-out font-Exo"
+                      className="inline-flex items-center px-10 py-2 border border-transparent font-semibold rounded-full shadow-md text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:scale-105 transition duration-300 ease-in-out"
                     >
                       Members Area
                     </Link>

@@ -22,9 +22,7 @@ const SecondHeroTitle = () => {
 const SecondHeroImage = () => {
   return (
     <Image
-      src={
-        "https://cdn.discordapp.com/attachments/960363105056075839/1087257480180023307/image.png"
-      }
+      src={"https://cdn.vyroai.com/static/upload-file.webp"}
       width={500}
       height={500}
       alt={"VyroAI"}

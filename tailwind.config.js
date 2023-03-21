@@ -16,6 +16,9 @@ module.exports = {
         "landing-gradient":
           "linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.85) 100%)",
       },
+      colors: {
+        heroButtonBlue: "#3a57e8",
+      },
     },
   },
   plugins: [],

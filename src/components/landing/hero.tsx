@@ -20,7 +20,7 @@ const HeroText = () => {
       </h2>
       <Link
         className={
-          "dark:bg-[#3A57E8] bg-black px-4 py-2 rounded-2xl text-white"
+          "bg-heroButtonBlue px-4 py-2 rounded-2xl inline-flex text-white hover:scale-105 transition duration-300 ease-in-out"
         }
         href={"/register"}
       >
@@ -33,9 +33,7 @@ const HeroImage = () => {
   return (
     <Image
       className={styles.center}
-      src={
-        "https://cdn.discordapp.com/attachments/993485056301600818/1087257805339246612/a.webp"
-      }
+      src={"https://cdn.vyroai.com/static/hero.webp"}
       width={700}
       height={700}
       alt={"VyroAI"}
