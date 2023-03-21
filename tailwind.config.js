@@ -5,11 +5,7 @@ module.exports = {
     "./src/pages/**/*.{ts,tsx,js,jsx}",
     "./src/app/**/*.{ts,tsx,js,jsx}",
   ],
-  content: [
-    "./src/components/**/*.{ts,tsx,js,jsx}",
-    "./src/pages/**/*.{ts,tsx,js,jsx}",
-    "./src/app/**/*.{ts,tsx,js,jsx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       backgroundImage: {
