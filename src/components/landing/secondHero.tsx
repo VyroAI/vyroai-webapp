@@ -11,7 +11,7 @@ const SecondHeroTitle = () => {
     <h1
       className={
         roboto.className +
-        " dark:text-white text-black text-2xl text-center font-bold lg:mt-10"
+        " dark:text-white text-black text-2xl text-center font-bold lg:mt-4"
       }
     >
       Unlock Your Academic Potential
@@ -22,6 +22,7 @@ const SecondHeroTitle = () => {
 const SecondHeroImage = () => {
   return (
     <Image
+      className={"pt-[4rem] pb-[6rem] lg:pt-1 lg:pb-20 pl-2"}
       src={"https://cdn.vyroai.com/static/upload-file.webp"}
       width={500}
       height={500}
@@ -34,11 +35,15 @@ const SecondHeroSection = () => {
   return (
     <div
       className={
-        "flex lg:flex-row flex-col w-full lg:mt-30 mt-16 lg:pr-32 lg:pl-16 px-7"
+        "flex lg:flex-row flex-col w-full lg:mt-16 mt-8 lg:pr-32 lg:pl-16"
       }
     >
-      <div className={roboto.className + " flex-none my-auto lg:ml-16"}>
-        <h1 className={"text-xl dark:text-white lg:mb-4"}>
+      <div
+        className={
+          roboto.className + " flex-none my-auto lg:ml-16 relative pl-3"
+        }
+      >
+        <h1 className={"text-xl dark:text-white lg:mb-2"}>
           Effortless Training
         </h1>
         <p className={"dark:text-white "}>
@@ -58,7 +63,7 @@ const SecondHeroSection = () => {
 
 export default function SecondHero() {
   return (
-    <div>
+    <div className={""}>
       <SecondHeroTitle></SecondHeroTitle>
       <SecondHeroSection></SecondHeroSection>
     </div>

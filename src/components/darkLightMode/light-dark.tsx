@@ -17,7 +17,7 @@ export default function LightDarkModeButton() {
         style={{
           bottom: "2rem",
           position: "fixed",
-          right: "3rem",
+          right: "2rem",
         }}
         checked={isDarkMode}
         onChange={toggleDarkMode}

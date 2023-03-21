@@ -32,7 +32,7 @@ const HeroText = () => {
 const HeroImage = () => {
   return (
     <Image
-      className={styles.center}
+      className={"pt-[8rem] pb-[6rem] lg:py-16"}
       src={"https://cdn.vyroai.com/static/hero.webp"}
       width={700}
       height={700}
