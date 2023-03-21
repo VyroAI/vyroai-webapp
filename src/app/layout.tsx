@@ -13,7 +13,7 @@ export const metadata = {
     url: "https://vyroai.com",
     images: [
       {
-        url: "https://vyroai.com/og-image.jpg",
+        url: "https://cdn.vyroai.com/static/logo.webp",
         width: 800,
         height: 600,
       },
@@ -24,7 +24,7 @@ export const metadata = {
     title: "VyroAI - AI Chatbot Support & Virtual Assistance",
     description:
       "Enhance your customer support with VyroAI, the cutting-edge AI chatbot and virtual assistance service. Improve engagement and experience with our live chat solutions.",
-    image: "https://vyroai.com/twitter-image.jpg",
+    image: "https://cdn.vyroai.com/static/logo.webp",
   },
 };
 import "../../styles/index.css";
@@ -42,7 +42,7 @@ export default function RootLayout({
           "container mx-auto h-auto bg-white dark:bg-landing-gradient lg:px-10"
         }
       >
-        <Navbar></Navbar>
+        {/*<Navbar></Navbar>*/}
         {children}
         <LightDarkModeButton></LightDarkModeButton>
       </body>

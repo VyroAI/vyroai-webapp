@@ -34,14 +34,14 @@ const SecondHeroSection = () => {
   return (
     <div
       className={
-        "flex lg:flex-row flex-col w-full lg:mt-30 mt-16 lg:pr-32 lg:pl-16"
+        "flex lg:flex-row flex-col w-full lg:mt-30 mt-16 lg:pr-32 lg:pl-16 px-7"
       }
     >
-      <div className={"flex-none my-auto lg:ml-10"}>
-        <h1 className={"text-xl dark:text-white text-dark mb-4"}>
+      <div className={roboto.className + " flex-none my-auto lg:ml-16"}>
+        <h1 className={"text-xl dark:text-white lg:mb-4"}>
           Effortless Training
         </h1>
-        <p>
+        <p className={"dark:text-white "}>
           Say goodbye to the hassle of complicated training with our<br></br>
           effortless setup process. With our AI chatbot, all you have to do is
           <br></br>

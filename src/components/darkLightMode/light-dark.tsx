@@ -8,7 +8,7 @@ export default function LightDarkModeButton() {
   const [isDarkMode, setDarkMode] = useState(true);
 
   const toggleDarkMode = (checked: boolean) => {
-    setTheme(colorTheme === "dark" ? "dark" : "light");
+    setTheme(colorTheme === "light" ? "light" : "dark");
     setDarkMode(checked);
   };
   return (

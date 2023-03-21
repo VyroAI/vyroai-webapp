@@ -9,13 +9,17 @@ export default function useDarkSide(): [string, (theme: string) => void] {
   }
   const [theme, setTheme] = useState(storageTheme);
 
-  const colorTheme = theme === "light" ? "dark" : "light";
+  const colorTheme = theme === "dark" ? "light" : "dark";
 
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove(colorTheme);
-    root.classList.add(theme);
-    localStorage.setItem("theme", theme);
+    if (typeof theme === "string") {
+      root.classList.add(theme);
+    }
+    if (typeof theme === "string") {
+      localStorage.setItem("theme", theme);
+    }
   }, [theme, colorTheme]);
 
   return [colorTheme, setTheme];

@@ -24,7 +24,7 @@ const HeroText = () => {
         }
         href={"/register"}
       >
-        Try Free Now
+        Subscribe For Updates
       </Link>
     </div>
   );

@@ -30,7 +30,7 @@ export default function Navbar() {
         <>
           <div
             className={joinClassName(
-              navbar || open ? "bg-landingPage" : "bg-transparent",
+              navbar || open ? "dark:bg-black bg-white" : "bg-transparent",
               " fixed top-0 left-0 right-0 z-50 "
             )}
           >
@@ -84,8 +84,8 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                <div className=" flex md:hidden">
-                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md dark:text-white text-black hover:text-white  focus:outline-none  font-Exo">
+                <div className="flex md:hidden">
+                  <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md dark:text-white text-black font-Exo">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
                       <FontAwesomeIcon
@@ -102,7 +102,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <Disclosure.Panel className="sm:hidden absolute bg-landingPage w-full h-screen">
+              <Disclosure.Panel className="sm:hidden absolute dark:bg-black bg-white w-full h-screen">
                 <div className="w-full block lg:hidden">
                   {navigationList.map((item) => (
                     <Link
@@ -114,7 +114,7 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-                <div className=" mx-auto w-80 pt-6">
+                <div className="mx-auto w-80 pt-6">
                   <Link
                     href={"/dashboard"}
                     className="block w-full text-center px-4 py-3 border border-transparent text-base font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:scale-105 transition duration-300 ease-in-out font-Exo"
