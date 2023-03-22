@@ -41,7 +41,7 @@ export default function LoginForm() {
           </button>
           <div className={"mt-2"}>
             <Link
-              className={"text-[#000000] dark:text-[#FFFFFF] underline "}
+              className={"text-black dark:text-white underline "}
               href={"/register"}
             >
               Create An Account

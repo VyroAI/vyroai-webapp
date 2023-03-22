@@ -48,7 +48,7 @@ export default function RegisterForm() {
           </button>
           <div className={"mt-2"}>
             <Link
-              className={"text-[#000000] dark:text-[#FFFFFF] underline "}
+              className={"dark:text-white text-black underline"}
               href={"/login"}
             >
               Login in

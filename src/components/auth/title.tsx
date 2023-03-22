@@ -11,7 +11,7 @@ export default function AuthTitle({ text, description }: AuthTitleProps) {
 
       <h2
         className={
-          "dark:text-[#FFFFFF] text-white text-md font-medium text-center mt-4"
+          "dark:text-white text-black text-md font-medium text-center mt-4"
         }
       >
         {description}
