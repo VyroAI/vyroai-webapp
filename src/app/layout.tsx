@@ -1,4 +1,3 @@
-"use client";
 import Navbar from "@/components/navbar/nav";
 import "../../styles/index.css";
 import LightDarkModeButton from "@/components/darkLightMode/light-dark";
