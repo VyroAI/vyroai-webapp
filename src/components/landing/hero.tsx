@@ -42,7 +42,7 @@ const HeroImage = () => {
 };
 export default function Hero() {
   return (
-    <div className="flex lg:flex-row flex-col lg:mt-30 mt-16">
+    <div className="flex lg:flex-row flex-col lg:mt-32 mt-36">
       <div className={"flex-none my-auto lg:ml-10"}>
         <HeroText></HeroText>
       </div>

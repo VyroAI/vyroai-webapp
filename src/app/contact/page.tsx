@@ -4,8 +4,8 @@ import BreakLine from "@/helper/breakLine";
 
 export default function ContactPage() {
   return (
-    <div className={"relative top-16"}>
-      <div className={"flex lg:flex-row lg:flex-col"}>
+    <div className={"relative"}>
+      <div className={"flex lg:flex-row flex-col"}>
         <div className="basis-1/2 h-screen">
           <div className={"flex items-center justify-center min-h-screen"}>
             <h1

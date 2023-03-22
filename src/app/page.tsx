@@ -6,7 +6,7 @@ import Accordion from "@/components/landing/faq";
 
 export default function Home() {
   return (
-    <main className="relative top-16">
+    <main className="relative">
       <Hero></Hero>
       <SecondHero></SecondHero>
       <ThirdHero></ThirdHero>
