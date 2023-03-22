@@ -74,12 +74,18 @@ export default function Navbar() {
                 </div>
 
                 <div className="hidden md:ml-6 md:block mt-1">
-                  <div className="flex items-center">
+                  <div className="flex items-center gap-1">
                     <Link
-                      href={"/dashboard"}
-                      className="inline-flex items-center px-10 py-2 border border-transparent font-semibold rounded-full shadow-md text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:scale-105 transition duration-300 ease-in-out"
+                      href={"/login"}
+                      className="inline-flex items-center px-4 py-2  font-semibold rounded-md shadow-md text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:scale-105 transition duration-300 ease-in-out"
                     >
-                      Members Area
+                      Login
+                    </Link>
+                    <Link
+                      href={"/register"}
+                      className="inline-flex items-center px-5 py-2  font-semibold rounded-md shadow-md text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:scale-105 transition duration-300 ease-in-out"
+                    >
+                      Sign In
                     </Link>
                   </div>
                 </div>
@@ -114,12 +120,18 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-                <div className="mx-auto w-80 pt-6">
+                <div className="flex mx-auto pt-6 px-8 gap-4">
                   <Link
-                    href={"/dashboard"}
-                    className="block w-full text-center px-4 py-3 border border-transparent text-base font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:scale-105 transition duration-300 ease-in-out font-Exo"
+                    href={"/login"}
+                    className="block w-full text-center px-4 py-2 text-base font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:scale-105 transition duration-300 ease-in-out font-Exo"
                   >
-                    Members Area
+                    Login
+                  </Link>
+                  <Link
+                    href={"/register"}
+                    className="block w-full text-center px-4 py-2  text-base font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:scale-105 transition duration-300 ease-in-out font-Exo"
+                  >
+                    Sign Up
                   </Link>
                 </div>
               </Disclosure.Panel>
