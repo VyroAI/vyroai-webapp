@@ -43,14 +43,14 @@ const SecondHeroSection = () => {
           roboto.className + " flex-none my-auto lg:ml-16 relative pl-3"
         }
       >
-        <h1 className={"text-xl dark:text-white lg:mb-2"}>
+        <h1 className={"text-2xl font-bold dark:text-white lg:mb-2"}>
           Effortless Training
         </h1>
-        <p className={"dark:text-white "}>
-          Say goodbye to the hassle of complicated training with our<br></br>
+        <p className={"dark:text-white font-semibold "}>
+          "Say goodbye to the hassle of complicated training with our<br></br>
           effortless setup process. With our AI chatbot, all you have to do is
           <br></br>
-          upload a document and voila!
+          upload a document and voila!"
         </p>
       </div>
       <div className={"grow"}></div>
