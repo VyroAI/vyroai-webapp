@@ -1,4 +1,3 @@
-import Head from "next/head";
 import FormBox from "@/components/contact/formBox";
 import BreakLine from "@/helper/breakLine";
 
