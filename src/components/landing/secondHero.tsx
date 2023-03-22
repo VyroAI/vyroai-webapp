@@ -1,33 +1,45 @@
+"use client";
 import { Roboto } from "next/font/google";
 import Image from "next/image";
 import BreakLine from "../../helper/breakLine";
+import { motion } from "framer-motion";
 
 const roboto = Roboto({
   weight: "300",
   style: ["normal"],
   preload: false,
 });
+
 const SecondHeroTitle = () => {
   return (
-    <h1
+    <motion.h1
       className={
         " dark:text-white text-black text-4xl text-center font-semibold lg:mt-4"
       }
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
     >
       Unlock Your Academic Potential
-    </h1>
+    </motion.h1>
   );
 };
 
 const SecondHeroImage = () => {
   return (
-    <Image
+    <motion.div
       className={"pt-[2rem] lg:pt-[4rem] lg:pb-[6rem] lg:pt-1 lg:pb-20 pl-2"}
-      src={"https://cdn.vyroai.com/static/upload-file.webp"}
-      width={500}
-      height={500}
-      alt={"VyroAI"}
-    ></Image>
+      initial={{ opacity: 0, x: 30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+    >
+      <Image
+        src={"https://cdn.vyroai.com/static/upload-file.webp"}
+        width={500}
+        height={500}
+        alt={"VyroAI"}
+      ></Image>
+    </motion.div>
   );
 };
 
@@ -38,10 +50,13 @@ const SecondHeroSection = () => {
         "flex lg:flex-row flex-col w-full lg:mt-16 mt-8 lg:pr-32 lg:pl-16"
       }
     >
-      <div
+      <motion.div
         className={
           roboto.className + " flex-none my-auto lg:ml-16 relative pl-3"
         }
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
       >
         <h1 className={"text-2xl font-bold dark:text-white lg:mb-2"}>
           Effortless Training
@@ -56,7 +71,7 @@ const SecondHeroSection = () => {
             upload a document and voila!
           </q>
         </p>
-      </div>
+      </motion.div>
       <div className={"grow"}></div>
       <div className={"flex-none"}>
         <SecondHeroImage></SecondHeroImage>

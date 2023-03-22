@@ -1,8 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../../app/page.module.css";
-
 import { Roboto } from "next/font/google";
+import { motion } from "framer-motion";
+
 const roboto = Roboto({
   weight: "300",
   style: ["normal"],
@@ -11,7 +12,12 @@ const roboto = Roboto({
 
 const HeroText = () => {
   return (
-    <div className={roboto.className + "  text-center"}>
+    <motion.div
+      className={roboto.className + " text-center"}
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <h1 className="text-3xl font-extrabold dark:text-white text-black">
         Streamline Your Research <br></br> Process With VyroAI
       </h1>
@@ -19,27 +25,35 @@ const HeroText = () => {
         Your Ultimate Research Assistant.
       </h2>
       <Link
+        href={"/register"}
         className={
           "bg-heroButtonBlue px-4 py-2 rounded-2xl inline-flex text-white hover:scale-105 transition duration-300 ease-in-out"
         }
-        href={"/register"}
       >
         Subscribe For Updates
       </Link>
-    </div>
+    </motion.div>
   );
 };
+
 const HeroImage = () => {
   return (
-    <Image
+    <motion.div
       className={"pt-[8rem] pb-[6rem] lg:py-16"}
-      src={"https://cdn.vyroai.com/static/hero.webp"}
-      width={700}
-      height={700}
-      alt={"VyroAI"}
-    ></Image>
+      initial={{ opacity: 0, x: 30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay: 0.3 }}
+    >
+      <Image
+        src={"https://cdn.vyroai.com/static/hero.webp"}
+        width={700}
+        height={700}
+        alt={"VyroAI"}
+      ></Image>
+    </motion.div>
   );
 };
+
 export default function Hero() {
   return (
     <div className="flex lg:flex-row flex-col lg:mt-32 mt-36">
