@@ -3,21 +3,29 @@ import { useState } from "react";
 import Link from "next/link";
 import FormInput from "@/components/auth/input";
 
-export default function LoginForm() {
+export default function RegisterForm() {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    console.log("Username:", email);
+    console.log("Username:", username);
     console.log("Password:", password);
   };
 
   return (
-    <div className="min-h-screen flex justify-end mt-10">
+    <div className="min-h-screen flex justify-end mt-5">
       <div className=" p-8 rounded-md dark:shadow-lg w-80">
         <form onSubmit={handleSubmit}>
+          <FormInput
+            name={"Username"}
+            placeholder={"Username"}
+            type={"text"}
+            value={username}
+            onChange={setUsername}
+          ></FormInput>
           <FormInput
             name={"Email"}
             placeholder={"Email"}
@@ -36,15 +44,14 @@ export default function LoginForm() {
             type="submit"
             className="w-full py-2 px-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none"
           >
-            Login To Your Account{" "}
-            <span className="inline-block ml-2 transform">&rarr;</span>
+            Register <span className="inline-block ml-2 transform">&rarr;</span>
           </button>
           <div className={"mt-2"}>
             <Link
               className={"text-[#000000] dark:text-[#FFFFFF] underline "}
-              href={"/register"}
+              href={"/login"}
             >
-              Create An Account
+              Login in
             </Link>
           </div>
         </form>

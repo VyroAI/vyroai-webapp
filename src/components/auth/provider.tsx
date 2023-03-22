@@ -1,12 +1,17 @@
 import Image from "next/image";
-import { providers } from "@/components/auth/store/providers";
 import Link from "next/link";
-export default function AuthProvider() {
+import { Provider } from "@/components/auth/store/providers";
+
+type AuthProviderProps = {
+  providers: Provider[];
+};
+
+export default function AuthProvider({ providers }: AuthProviderProps) {
   return (
     <div>
       {providers.map((provider) => (
         <Link
-          key={provider.name}
+          key={provider.id}
           href={provider.url}
           className={
             "py-3 rounded-sm outline outline-1 outline-green-500 mt-6 w-80 flex pl-5 dark:bg-transparent dark:text-white text-black"
@@ -26,9 +31,7 @@ export default function AuthProvider() {
             width={20}
             alt={provider.name}
           ></Image>
-          <h1 className={"ml-4 dark:text-white"}>
-            Sign in with {provider.name}
-          </h1>
+          <h1 className={"ml-4 dark:text-white"}>{provider.name}</h1>
         </Link>
       ))}
     </div>

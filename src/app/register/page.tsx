@@ -1,10 +1,10 @@
 import AuthTitle from "@/components/auth/title";
-import LoginForm from "@/components/auth/loginForm";
+import { RegisterProvider } from "../../../src/components/auth/store/providers";
 import AuthProvider from "@/components/auth/provider";
-import { LoginProvider } from "@/components/auth/store/providers";
+import RegisterForm from "@/components/auth/registerForm";
 
 export const metadata = {
-  title: "Login | VyroAI",
+  title: "Register | VyroAI",
   description:
     "Enhance your customer support with VyroAI, the cutting-edge AI chatbot and virtual assistance service. Improve engagement and experience with our live chat solutions.",
   keywords:
@@ -24,21 +24,21 @@ export const metadata = {
   },
 };
 
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
     <div className={"relative"}>
       <div className={"mt-48"}>
         <AuthTitle
-          text={"Login To Your Account"}
+          text={"Register"}
           description={"Manage Your Personalized Chatbot Now"}
         ></AuthTitle>
       </div>
       <div className={"flex lg:flex-row flex-col gap-32"}>
         <div className="basis-1/2 ">
-          <LoginForm></LoginForm>
+          <RegisterForm></RegisterForm>
         </div>
         <div className="basis-1/2">
-          <AuthProvider providers={LoginProvider}></AuthProvider>
+          <AuthProvider providers={RegisterProvider}></AuthProvider>
         </div>
       </div>
       {/*<div className={""}>*/}
