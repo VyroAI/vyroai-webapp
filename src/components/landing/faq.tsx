@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-import { faqs } from "@/components/landing/store/faq";
+import React, { useState } from "react";
+import { Faq, faqs } from "@/components/landing/store/faq";
 
 export default function FaqAccordance() {
   return (
@@ -19,8 +19,11 @@ export default function FaqAccordance() {
     </div>
   );
 }
+type FaqItemProps = {
+  faq: Faq;
+};
 
-function FaqItem({ faq }) {
+const FaqItem: React.FC<FaqItemProps> = ({ faq }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const variants = {
@@ -30,8 +33,11 @@ function FaqItem({ faq }) {
 
   return (
     <div className="border-b border-gray-200 my-4">
-      <div className="py-4 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-        <h3 className="font-bold text-lg dark:text-white">{faq.question}</h3>
+      <div
+        className="py-4 cursor-pointer px-3"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <h3 className="font-bold text-lg dark:text-white ">{faq.question}</h3>
       </div>
       <AnimatePresence>
         {isOpen && (
@@ -49,4 +55,4 @@ function FaqItem({ faq }) {
       </AnimatePresence>
     </div>
   );
-}
+};

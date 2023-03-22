@@ -1,4 +1,4 @@
-export let faqs = [
+export let faqs: Faq[] = [
   {
     question: "What is Vyro AI",
     answer: "...",
@@ -17,3 +17,8 @@ export let faqs = [
     answer: "...",
   },
 ];
+
+export type Faq = {
+  question: string;
+  answer: string;
+};

@@ -1,5 +1,6 @@
 import { Roboto } from "next/font/google";
 import Image from "next/image";
+import BreakLine from "../../helper/breakLine";
 
 const roboto = Roboto({
   weight: "300",
@@ -21,7 +22,7 @@ const SecondHeroTitle = () => {
 const SecondHeroImage = () => {
   return (
     <Image
-      className={"pt-[4rem] pb-[6rem] lg:pt-1 lg:pb-20 pl-2"}
+      className={"pt-[2rem] lg:pt-[4rem] lg:pb-[6rem] lg:pt-1 lg:pb-20 pl-2"}
       src={"https://cdn.vyroai.com/static/upload-file.webp"}
       width={500}
       height={500}
@@ -45,11 +46,13 @@ const SecondHeroSection = () => {
         <h1 className={"text-2xl font-bold dark:text-white lg:mb-2"}>
           Effortless Training
         </h1>
-        <p className={"dark:text-white font-semibold "}>
+        <p className={"dark:text-white font-semibold"}>
           <q>
-            Say goodbye to the hassle of complicated training with our<br></br>
+            Say goodbye to the hassle of complicated training with our{""}
+            {BreakLine()}
             effortless setup process. With our AI chatbot, all you have to do is
-            <br></br>
+            {""}
+            {BreakLine()}
             upload a document and voila!
           </q>
         </p>
