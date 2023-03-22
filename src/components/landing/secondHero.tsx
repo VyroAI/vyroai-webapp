@@ -47,10 +47,12 @@ const SecondHeroSection = () => {
           Effortless Training
         </h1>
         <p className={"dark:text-white font-semibold "}>
-          "Say goodbye to the hassle of complicated training with our<br></br>
-          effortless setup process. With our AI chatbot, all you have to do is
-          <br></br>
-          upload a document and voila!"
+          <q>
+            Say goodbye to the hassle of complicated training with our<br></br>
+            effortless setup process. With our AI chatbot, all you have to do is
+            <br></br>
+            upload a document and voila!
+          </q>
         </p>
       </div>
       <div className={"grow"}></div>
