@@ -42,7 +42,7 @@ export default function RootLayout({
           "container mx-auto h-auto bg-white dark:bg-landing-gradient lg:px-10"
         }
       >
-        {/*<Navbar></Navbar>*/}
+        <Navbar></Navbar>
         {children}
         <LightDarkModeButton></LightDarkModeButton>
       </body>

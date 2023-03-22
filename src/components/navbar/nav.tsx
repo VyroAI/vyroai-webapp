@@ -39,20 +39,20 @@ export default function Navbar() {
                 <div className="flex-shrink-0">
                   <Link href={"/"} className={"flex"}>
                     <Image
-                      className={"h-16 w-auto mt-2 block lg:hidden px-2"}
-                      width={64}
-                      height={64}
+                      className={"h-14 w-auto mt-2 block lg:hidden px-2"}
+                      width={55}
+                      height={55}
                       src="https://cdn.vyroai.com/static/logo.webp"
                       alt="vyroai logo"
                       priority={true}
                     />
                     <Image
                       className={joinClassName(
-                        navbar ? "h-16 w-auto mt-2" : "h-20 w-auto mt-12",
+                        navbar ? "h-14 w-auto mt-2" : "h-20 w-auto mt-12",
                         "hidden lg:block"
                       )}
-                      width={64}
-                      height={64}
+                      width={55}
+                      height={55}
                       src="https://cdn.vyroai.com/static/logo.webp"
                       alt="vyroai logo"
                       priority={true}

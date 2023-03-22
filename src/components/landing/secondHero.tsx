@@ -10,8 +10,7 @@ const SecondHeroTitle = () => {
   return (
     <h1
       className={
-        roboto.className +
-        " dark:text-white text-black text-2xl text-center font-bold lg:mt-4"
+        " dark:text-white text-black text-4xl text-center font-semibold lg:mt-4"
       }
     >
       Unlock Your Academic Potential
