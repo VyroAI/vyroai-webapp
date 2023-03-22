@@ -6,7 +6,11 @@ export default function useDarkSide(): [string, (theme: string) => void] {
   if (typeof window !== "undefined") {
     // do localStorage stuff here
     storageTheme = localStorage.getItem("theme");
+    if (storageTheme === null) {
+      localStorage.setItem("theme", "light");
+    }
   }
+
   const [theme, setTheme] = useState(storageTheme);
 
   const colorTheme = theme === "dark" ? "light" : "dark";

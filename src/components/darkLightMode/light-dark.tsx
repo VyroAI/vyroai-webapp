@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function LightDarkModeButton() {
   const [colorTheme, setTheme] = useDarkSide();
-  const [isDarkMode, setDarkMode] = useState(true);
+  const [isDarkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = (checked: boolean) => {
     setTheme(colorTheme === "light" ? "light" : "dark");
