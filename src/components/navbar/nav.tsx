@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <Disclosure as="nav">
-      {({ open }) => (
+      {({ open, close }: {}) => (
         <>
           <div
             className={joinClassName(
@@ -42,6 +42,7 @@ export default function Navbar() {
                       className={"h-14 w-auto mt-2 block lg:hidden px-2"}
                       width={55}
                       height={55}
+                      onClick={close}
                       src="https://cdn.vyroai.com/static/logo.webp"
                       alt="vyroai logo"
                       priority={true}
@@ -51,6 +52,7 @@ export default function Navbar() {
                         navbar ? "h-14 w-auto mt-2" : "h-20 w-auto mt-12",
                         "hidden lg:block"
                       )}
+                      href={"/login"}
                       width={55}
                       height={55}
                       src="https://cdn.vyroai.com/static/logo.webp"
@@ -114,6 +116,7 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       key={item.title}
+                      onClick={close}
                       className="block py-2 rounded-md hover:bg-gray-700 dark:text-white text-black block px-3 pb-4 rounded-md font-medium text-base font-Lato"
                     >
                       {item.title}
@@ -123,12 +126,14 @@ export default function Navbar() {
                 <div className="flex mx-auto pt-6 px-8 gap-4">
                   <Link
                     href={"/login"}
+                    onClick={close}
                     className="block w-full text-center px-4 py-2 text-base font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none hover:scale-105 transition duration-300 ease-in-out font-Exo"
                   >
                     Login
                   </Link>
                   <Link
                     href={"/register"}
+                    onClick={close}
                     className="block w-full text-center px-4 py-2  text-base font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none hover:scale-105 transition duration-300 ease-in-out font-Exo"
                   >
                     Sign Up
