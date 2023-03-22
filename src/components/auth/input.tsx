@@ -21,7 +21,7 @@ export default function FormInput({
       <input
         id={name}
         type={type}
-        className="w-full px-3 py-2 dark:bg-[#1C1D1C] dark:text-white bg-[#F1ECEC] rounded-md focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
+        className="w-full px-3 py-2 dark:bg-[#1C1D1C] dark:text-black bg-[#F1ECEC] rounded-md focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
