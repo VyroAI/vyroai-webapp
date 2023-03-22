@@ -1,4 +1,7 @@
+"use client";
 import Navbar from "@/components/navbar/nav";
+import "../../styles/index.css";
+import LightDarkModeButton from "@/components/darkLightMode/light-dark";
 
 export const metadata = {
   title: "VyroAI",
@@ -27,8 +30,6 @@ export const metadata = {
     image: "https://cdn.vyroai.com/static/logo.webp",
   },
 };
-import "../../styles/index.css";
-import LightDarkModeButton from "@/components/darkLightMode/light-dark";
 
 export default function RootLayout({
   children,
