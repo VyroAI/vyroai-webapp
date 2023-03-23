@@ -51,6 +51,7 @@ const HeroImage = () => {
         width={700}
         height={700}
         alt={"VyroAI"}
+        priority={true}
       ></Image>
     </motion.div>
   );
