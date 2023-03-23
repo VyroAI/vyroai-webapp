@@ -28,7 +28,7 @@ const SecondHeroTitle = () => {
 const SecondHeroImage = () => {
   return (
     <motion.div
-      className={"pt-[2rem] lg:pt-[4rem] lg:pb-[6rem] lg:pt-1 lg:pb-20 pl-2"}
+      className={"pt-[2rem] lg:pt-[4rem] lg:pb-[6rem] lg:pt-1 lg:pb-20 px-8"}
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.3 }}

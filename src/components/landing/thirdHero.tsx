@@ -17,7 +17,7 @@ const SecondHeroImage = ({ show }: SecondHeroImageProps) => {
     <Image
       className={`${
         show ? "lg:hidden" : "hidden lg:block"
-      } mt-[2rem] lg:pt-[4rem] lg:pb-[6rem] lg:pt-1 lg:pb-20 pl-2`}
+      } mt-[2rem] lg:pt-[4rem] lg:pb-[6rem] lg:pt-1 lg:pb-20 px-8`}
       src={"https://cdn.vyroai.com/static/broswer.webp"}
       width={500}
       height={500}
@@ -28,7 +28,7 @@ const SecondHeroImage = ({ show }: SecondHeroImageProps) => {
 
 export default function ThirdHero() {
   return (
-    <div className={"flex lg:flex-row flex-col w-full lg:pr-16 lg:pl-32 "}>
+    <div className={"flex lg:flex-row flex-col w-full lg:pr-16 lg:pl-32"}>
       <SecondHeroImage show={false}></SecondHeroImage>
       <div className={"grow"}></div>
       <div className={"flex-none my-auto"}>

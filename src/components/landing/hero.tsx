@@ -39,13 +39,15 @@ const HeroText = () => {
 const HeroImage = () => {
   return (
     <motion.div
-      className={"pt-[8rem] pb-[6rem] lg:py-16"}
+      className={"pt-[8rem] pb-[6rem] lg:py-16 px-10"}
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.3 }}
     >
       <Image
-        src={"https://cdn.vyroai.com/static/hero.webp"}
+        className={"border-[3px] dark:border-[#3A57E8] border-[#FFD2C4]"}
+        style={{ boxShadow: "#3A57E8 0 1px 110px" }}
+        src={"https://cdn.vyroai.com/static/vyro_dashboard.webp"}
         width={700}
         height={700}
         alt={"VyroAI"}
