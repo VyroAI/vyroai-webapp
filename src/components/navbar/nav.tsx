@@ -78,13 +78,7 @@ export default function Navbar() {
                   <div className="flex items-center gap-1">
                     <Link
                       href={"/login"}
-                      className="inline-flex items-center px-4 py-2  font-semibold rounded-md shadow-md text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 hover:scale-105 transition duration-300 ease-in-out"
-                    >
-                      Login
-                    </Link>
-                    <Link
-                      href={"/register"}
-                      className="inline-flex items-center px-5 py-2  font-semibold rounded-md shadow-md text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 hover:scale-105 transition duration-300 ease-in-out"
+                      className="inline-flex items-center px-6 py-2  font-semibold rounded-full shadow-md text-white bg-[#3A57E8] hover:bg-indigo-700 hover:scale-105 transition duration-300 ease-in-out"
                     >
                       Sign In
                     </Link>
@@ -126,16 +120,9 @@ export default function Navbar() {
                   <Link
                     href={"/login"}
                     onClick={() => close()}
-                    className="block w-full text-center px-4 py-2 text-base font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none hover:scale-105 transition duration-300 ease-in-out font-Exo"
+                    className="block w-full text-center px-4 py-2  text-base font-semibold rounded-md shadow-sm text-white bg-[#3A57E8] hover:bg-indigo-700 focus:outline-none hover:scale-105 transition duration-300 ease-in-out font-Exo"
                   >
-                    Login
-                  </Link>
-                  <Link
-                    href={"/register"}
-                    onClick={() => close()}
-                    className="block w-full text-center px-4 py-2  text-base font-semibold rounded-md shadow-sm text-white bg-gradient-to-r from-[#2a73ed] to-[#2194f7] hover:bg-indigo-700 focus:outline-none hover:scale-105 transition duration-300 ease-in-out font-Exo"
-                  >
-                    Sign Up
+                    Sign In
                   </Link>
                 </div>
               </Disclosure.Panel>
