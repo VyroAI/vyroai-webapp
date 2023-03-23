@@ -45,7 +45,7 @@ const HeroImage = () => {
       transition={{ duration: 0.6, delay: 0.3 }}
     >
       <Image
-        className={"border-[3px] dark:border-[#3A57E8] border-[#FFD2C4]"}
+        className={"border-[3px] dark:border-[#3a57e8] border-[#b3afff]"}
         style={{ boxShadow: "#3A57E8 0 1px 110px" }}
         src={"https://cdn.vyroai.com/static/vyro_dashboard.webp"}
         width={700}
