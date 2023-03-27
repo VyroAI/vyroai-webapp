@@ -26,7 +26,15 @@ export default function ContactPage() {
   return (
     <div className={"relative"}>
       <div className={"flex lg:flex-row flex-col"}>
-        <div className="basis-1/2 h-screen">
+        <div className={"absolute mt-24 text-center block lg:hidden"}>
+          <h1
+            className={"text-4xl font-extrabold dark:text-white lg:mt-[-200px]"}
+          >
+            Lets Chat {BreakLine()} Tell me about your project{" "}
+          </h1>
+        </div>
+
+        <div className="basis-1/2 h-screen hidden lg:block">
           <div className={"flex items-center justify-center min-h-screen"}>
             <h1
               className={
