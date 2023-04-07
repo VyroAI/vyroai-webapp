@@ -1,24 +1,85 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import FormInput from "@/components/auth/input";
+import { useRouter } from "next/navigation";
+import { toast, ToastContainer } from "react-toastify";
+import { setCookie } from "cookies-next";
+import Script from "next/script";
 
 export default function RegisterForm() {
-  const [username, setUsername] = useState("");
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [captcha, setCaptcha] = useState("");
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  useEffect(() => {
+    if (captcha != "") {
+      const payload = {
+        email: email,
+        username: username,
+        password: password,
+        reCaptcha: captcha,
+      };
+
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}v1/auth/register`, {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
+        .then(async (response) => {
+          const responseFromServer = await response.json();
+
+          if (response.status == 201) {
+            toast.success(responseFromServer.message);
+            setCookie("authorization", "bearer " + responseFromServer.data);
+            await router.push("/dashboard");
+          } else {
+            toast.error(responseFromServer.error);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    // setLoading(() => false);
+  }, [captcha]);
+
+  const register = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    console.log("Username:", username);
-    console.log("Password:", password);
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute(
+        "6LcjNR0jAAAAAE14isjbo9OjTiikFFgr52y5hqCU",
+        {
+          action: "Register",
+        }
+      );
+      setCaptcha(() => token);
+    });
   };
-
   return (
     <div className="min-h-screen flex justify-end mt-5">
+      <Script src="https://www.google.com/recaptcha/enterprise.js?render=6LcjNR0jAAAAAE14isjbo9OjTiikFFgr52y5hqCU"></Script>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className=" p-8 rounded-md dark:shadow-lg w-80">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={register}>
           <FormInput
             name={"Username"}
             placeholder={"Username"}

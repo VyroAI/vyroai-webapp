@@ -4,11 +4,18 @@ import Link from "next/link";
 import FormInput from "@/components/auth/input";
 import Script from "next/script";
 import { useRouter } from "next/navigation";
-import { setCookie } from "cookies-next";
+import { setCookie, getCookie, deleteCookie } from "cookies-next";
 import { ToastContainer, toast } from "react-toastify";
 
 export default function LoginForm() {
   const router = useRouter();
+  useEffect(() => {
+    switch (getCookie("oauth_error")) {
+      case "a03f472b2cc9b6e15e500e2d8bb286a658c4037f":
+        toast.error("An account with this Discord sign in was not found");
+        deleteCookie("oauth_error");
+    }
+  }, []);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +41,7 @@ export default function LoginForm() {
         .then(async (response) => {
           const responseFromServer = await response.json();
 
-          if (response.status == 201) {
+          if (response.status == 200) {
             toast.success(responseFromServer.message);
             setCookie("authorization", "bearer " + responseFromServer.data);
             await router.push("/dashboard");
