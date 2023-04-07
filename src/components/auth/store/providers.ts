@@ -13,7 +13,7 @@ export let LoginProvider: Provider[] = [
     name: "Sign in with Apple",
     icon: "apple_logo.svg",
     darkIcon: "apple_logo_dark.svg",
-    url: "https://accounts.google.com/o/oauth2/v2/auth",
+    url: process.env.NEXT_PUBLIC_API_URL + "v1/auth/apple/login",
     bg: "black",
   },
   {
@@ -21,7 +21,7 @@ export let LoginProvider: Provider[] = [
     name: "Sign in with Google",
     icon: "google_icon.svg",
     darkIcon: "google_icon.svg",
-    url: "https://appleid.apple.com/auth/authorize",
+    url: process.env.NEXT_PUBLIC_API_URL + "v1/auth/google/login",
     bg: "white",
   },
   {
@@ -29,7 +29,7 @@ export let LoginProvider: Provider[] = [
     name: "Sign in with Instagram",
     icon: "instagram_logo.svg",
     darkIcon: "instagram_logo_dark.svg",
-    url: "https://www.facebook.com/v9.0/dialog/oauth",
+    url: process.env.NEXT_PUBLIC_API_URL + "v1/auth/Instagram/login",
     bg: "#E1306C",
   },
 
@@ -38,7 +38,7 @@ export let LoginProvider: Provider[] = [
     name: "Sign in with Discord",
     icon: "discord_logo.svg",
     darkIcon: "discord_logo_dark.svg",
-    url: "https://accounts.google.com/o/oauth2/v2/auth",
+    url: process.env.NEXT_PUBLIC_API_URL + "v1/auth/discord/login",
     bg: "#5662F6",
   },
 ];
@@ -48,7 +48,7 @@ export let RegisterProvider: Provider[] = [
     name: "Register using Apple",
     icon: "apple_logo.svg",
     darkIcon: "apple_logo_dark.svg",
-    url: "https://accounts.google.com/o/oauth2/v2/auth",
+    url: process.env.NEXT_PUBLIC_API_URL + "v1/auth/discord/register",
     bg: "black",
   },
   {
@@ -56,7 +56,7 @@ export let RegisterProvider: Provider[] = [
     name: "Register using Google",
     icon: "google_icon.svg",
     darkIcon: "google_icon.svg",
-    url: "https://appleid.apple.com/auth/authorize",
+    url: process.env.NEXT_PUBLIC_API_URL + "v1/auth/google/register",
     bg: "white",
   },
   {
@@ -64,7 +64,7 @@ export let RegisterProvider: Provider[] = [
     name: "Register using Instagram",
     icon: "instagram_logo.svg",
     darkIcon: "instagram_logo_dark.svg",
-    url: "https://www.facebook.com/v9.0/dialog/oauth",
+    url: process.env.NEXT_PUBLIC_API_URL + "v1/auth/instagram/register",
     bg: "#E1306C",
   },
 
@@ -73,7 +73,7 @@ export let RegisterProvider: Provider[] = [
     name: "Register using Discord",
     icon: "discord_logo.svg",
     darkIcon: "discord_logo_dark.svg",
-    url: "https://accounts.google.com/o/oauth2/v2/auth",
+    url: process.env.NEXT_PUBLIC_API_URL + "v1/auth/discord/register",
     bg: "#5662F6",
   },
 ];

@@ -1,5 +1,10 @@
-import Navbar from "@/components/navbar/nav";
+import React from "react";
+
 import "../../styles/index.css";
+import "react-toastify/dist/ReactToastify.css";
+
+import Navbar from "@/components/navbar/nav";
+
 import LightDarkModeButton from "@/components/darkLightMode/light-dark";
 
 export const metadata = {
@@ -22,7 +27,7 @@ export const metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary_large_image ",
     title: "VyroAI - AI Chatbot Support & Virtual Assistance",
     description:
       "Enhance your customer support with VyroAI, the cutting-edge AI chatbot and virtual assistance service. Improve engagement and experience with our live chat solutions.",

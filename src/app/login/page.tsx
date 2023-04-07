@@ -1,6 +1,7 @@
 import AuthTitle from "@/components/auth/title";
 import LoginForm from "@/components/auth/loginForm";
 import AuthProvider from "@/components/auth/provider";
+
 import { LoginProvider } from "@/components/auth/store/providers";
 
 export const metadata = {
@@ -33,6 +34,7 @@ export default function LoginPage() {
           description={"Manage Your Personalized Chatbot Now"}
         ></AuthTitle>
       </div>
+
       <div className={"flex lg:flex-row flex-col gap-32"}>
         <div className="basis-1/2 ">
           <LoginForm></LoginForm>
