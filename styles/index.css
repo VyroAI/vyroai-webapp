@@ -3,3 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 /* purgecss end ignore */
+
+
+
+.grecaptcha-badge {
+    visibility: hidden;
+}

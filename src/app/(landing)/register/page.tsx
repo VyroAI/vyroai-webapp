@@ -1,5 +1,5 @@
 import AuthTitle from "@/components/auth/title";
-import { RegisterProvider } from "../../../src/components/auth/store/providers";
+import { RegisterProvider } from "../../../components/auth/store/providers";
 import AuthProvider from "@/components/auth/provider";
 import RegisterForm from "@/components/auth/registerForm";
 

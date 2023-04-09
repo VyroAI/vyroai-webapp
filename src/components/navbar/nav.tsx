@@ -1,15 +1,18 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import joinClassName from "../../helper/joinClassName";
 import navigationList from "./store/navigation";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
+  const pathname = usePathname();
+  // useEffect and other codes ...
 
   const changeBackground = () => {
     if (window.scrollY >= 64) {
@@ -19,8 +22,10 @@ export default function Navbar() {
     }
   };
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     changeBackground();
+    // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground);
   });
 
