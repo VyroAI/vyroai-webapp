@@ -1,12 +1,14 @@
 "use client";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+
 import {
-  MenuIcon,
-  XIcon,
-  ChatAltIcon,
+  Bars3Icon,
+  XMarkIcon,
+  ChatBubbleLeftEllipsisIcon,
   PaperAirplaneIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/24/outline";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faFolder } from "@fortawesome/free-solid-svg-icons";
 
@@ -75,7 +77,7 @@ export default function Sidebar() {
                       onClick={() => setSidebarOpen(false)}
                     >
                       <span className="sr-only">Close sidebar</span>
-                      <XIcon
+                      <XMarkIcon
                         className="h-6 w-6 text-white"
                         aria-hidden="true"
                       />
@@ -164,7 +166,7 @@ export default function Sidebar() {
                       "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                     )}
                   >
-                    <ChatAltIcon
+                    <ChatBubbleLeftEllipsisIcon
                       className={joinClassName(
                         item.current
                           ? "text-gray-500"
@@ -213,7 +215,7 @@ export default function Sidebar() {
               onClick={() => setSidebarOpen(true)}
             >
               <span className="sr-only">Open sidebar</span>
-              <MenuIcon className="h-6 w-6" aria-hidden="true" />
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
           <main className="flex-1 flex flex-col ">
