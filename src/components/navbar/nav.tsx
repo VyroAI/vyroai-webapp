@@ -7,12 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import joinClassName from "../../helper/joinClassName";
 import navigationList from "./store/navigation";
-import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
-  const pathname = usePathname();
-  // useEffect and other codes ...
 
   const changeBackground = () => {
     if (window.scrollY >= 64) {
