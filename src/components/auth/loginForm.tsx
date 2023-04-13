@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import FormInput from "@/components/auth/input";
 import Script from "next/script";
@@ -56,6 +56,7 @@ export default function LoginForm() {
           console.log(error);
         });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [captcha]);
 
   const login = (event: React.FormEvent<HTMLFormElement>) => {
@@ -104,7 +105,7 @@ export default function LoginForm() {
             onChange={setPassword}
           ></FormInput>
           <button
-            disabled={loading ? true : false}
+            disabled={loading}
             type="submit"
             className="w-full py-2 px-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none"
           >
