@@ -1,4 +1,4 @@
-import FormBox from "@/components/contact/formBox";
+import FormBox from "@/components/landing/contact/formBox";
 import BreakLine from "@/helper/breakLine";
 
 export const metadata = {
