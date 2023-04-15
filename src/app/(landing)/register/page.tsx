@@ -1,7 +1,9 @@
 import AuthTitle from "@/components/auth/title";
-import { RegisterProvider } from "../../../components/auth/store/providers";
+import { RegisterProvider } from "@/components/auth/store/providers";
 import AuthProvider from "@/components/auth/provider";
 import RegisterForm from "@/components/auth/registerForm";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Register | VyroAI",
@@ -25,6 +27,10 @@ export const metadata = {
 };
 
 export default function RegisterPage() {
+  const cookieStore = cookies();
+  if (cookieStore.has("authorization")) {
+    redirect("/dashboard");
+  }
   return (
     <div className={"relative"}>
       <div className={"mt-48"}>

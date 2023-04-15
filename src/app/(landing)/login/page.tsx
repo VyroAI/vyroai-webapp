@@ -3,6 +3,8 @@ import LoginForm from "@/components/auth/loginForm";
 import AuthProvider from "@/components/auth/provider";
 
 import { LoginProvider } from "@/components/auth/store/providers";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Login | VyroAI",
@@ -26,6 +28,10 @@ export const metadata = {
 };
 
 export default function LoginPage() {
+  const cookieStore = cookies();
+  if (cookieStore.has("authorization")) {
+    redirect("/dashboard");
+  }
   return (
     <div className={"relative"}>
       <div className={"mt-48"}>
