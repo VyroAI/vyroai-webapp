@@ -64,11 +64,6 @@ export default function RegisterForm() {
       setLoading(() => false);
       return;
     }
-    if (!validateUsername(email)) {
-      toast.error("Symbols are not allowed in username");
-      setLoading(() => false);
-      return;
-    }
     if (username.length < 6 || username.length > 25) {
       toast.error("Username length must be bigger then 6");
       setLoading(() => false);
@@ -78,6 +73,12 @@ export default function RegisterForm() {
       toast.error("Password length must be bigger then 6");
       setLoading(() => false);
       return false;
+    }
+
+    if (!validateUsername(username)) {
+      toast.error("Symbols are not allowed in username");
+      setLoading(() => false);
+      return;
     }
 
     grecaptcha.enterprise.ready(async () => {
@@ -117,7 +118,7 @@ export default function RegisterForm() {
           <FormInput
             name={"Email"}
             placeholder={"Email"}
-            type={"text"}
+            type={"email"}
             value={email}
             onChange={setEmail}
           ></FormInput>
