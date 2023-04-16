@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { toast, ToastContainer } from "react-toastify";
 import { setCookie } from "cookies-next";
 import Script from "next/script";
+import { validateEmail, validateUsername } from "@/helper/satanized";
 
 export default function RegisterForm() {
   const router = useRouter();
@@ -55,7 +56,30 @@ export default function RegisterForm() {
 
   const register = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     setLoading(() => true);
+
+    if (!validateEmail(email)) {
+      toast.error("Please use a valid email");
+      setLoading(() => false);
+      return;
+    }
+    if (!validateUsername(email)) {
+      toast.error("Symbols are not allowed in username");
+      setLoading(() => false);
+      return;
+    }
+    if (username.length < 6 || username.length > 25) {
+      toast.error("Username length must be bigger then 6");
+      setLoading(() => false);
+      return false;
+    }
+    if (password.length < 6) {
+      toast.error("Password length must be bigger then 6");
+      setLoading(() => false);
+      return false;
+    }
+
     grecaptcha.enterprise.ready(async () => {
       const token = await grecaptcha.enterprise.execute(
         "6LcjNR0jAAAAAE14isjbo9OjTiikFFgr52y5hqCU",

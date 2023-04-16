@@ -7,6 +7,7 @@ import Script from "next/script";
 import { useRouter } from "next/navigation";
 import { setCookie, getCookie, deleteCookie } from "cookies-next";
 import { ToastContainer, toast } from "react-toastify";
+import { validateEmail } from "@/helper/satanized";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -62,6 +63,19 @@ export default function LoginForm() {
   const login = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(() => true);
+
+    if (!validateEmail(email)) {
+      toast.error("Please use a valid email");
+      setLoading(() => false);
+      return;
+    }
+
+    if (password.length < 6) {
+      toast.error("Password length must be bigger then 6");
+      setLoading(() => false);
+      return false;
+    }
+
     grecaptcha.enterprise.ready(async () => {
       const token = await grecaptcha.enterprise.execute(
         "6LcjNR0jAAAAAE14isjbo9OjTiikFFgr52y5hqCU",
