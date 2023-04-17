@@ -23,10 +23,11 @@ export default function Sidebar({
   chats: Chat[];
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [selectedChat, setSelectedChat] = useState<number | null>(null);
+  const [selectedChat, setSelectedChat] = useState<number>(0);
 
   useEffect(() => {
-    if (chats[0].chat_id != 0 && selectedChat == null) {
+    if (chats.length == 0) return;
+    if (chats[0].chat_id != 0 && selectedChat == 0) {
       setSelectedChat(chats[0].chat_id);
     }
   }, [chats]);

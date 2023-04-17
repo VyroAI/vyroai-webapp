@@ -5,7 +5,7 @@ import { Chat } from "@/app/(dash)/dashboard/index.interface";
 
 export default function ChatList(
   chats: Chat[],
-  selected: number | null,
+  selected: number,
   setSelected: any
 ) {
   return chats.map((chat) => (
