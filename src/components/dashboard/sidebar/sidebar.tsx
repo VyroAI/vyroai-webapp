@@ -19,14 +19,14 @@ export default function Sidebar({
   user,
   chats,
 }: {
-  User: User;
+  user: User | null;
   chats: Chat[];
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [selectedChat, setSelectedChat] = useState<number>();
+  const [selectedChat, setSelectedChat] = useState<number | null>(null);
 
   useEffect(() => {
-    if (chats[0].chat_id != 0 && selectedChat == undefined) {
+    if (chats[0].chat_id != 0 && selectedChat == null) {
       setSelectedChat(chats[0].chat_id);
     }
   }, [chats]);

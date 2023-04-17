@@ -9,7 +9,7 @@ import { Chat, User } from "@/app/(dash)/dashboard/index.interface";
 
 export default function Dashboard({ params }: { params: { token: string } }) {
   const router = useRouter();
-  const [user, setUser] = useState<User>({});
+  const [user, setUser] = useState<User | null>(null);
   const [chats, setChat] = useState<Chat[]>([{ chat_id: 0, title: "" }]);
 
   useEffect(() => {
