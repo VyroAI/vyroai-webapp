@@ -1,6 +1,25 @@
-import { HomeIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowRightOnRectangleIcon,
+  UserIcon,
+  Cog6ToothIcon,
+} from "@heroicons/react/24/outline";
 
-const navigation = [
-  { name: "Logout", href: "#", icon: HomeIcon, current: true },
+interface navType {
+  id: number;
+  name: string;
+  href: string;
+  icon: any;
+}
+
+const navigation: navType[] = [
+  { id: 0, name: "My Plan", href: "#", icon: UserIcon },
+  { id: 1, name: "Settings", href: "#", icon: Cog6ToothIcon },
+  {
+    id: 2,
+    name: "Logout",
+    href: "#",
+    icon: ArrowRightOnRectangleIcon,
+  },
 ];
+
 export default navigation;

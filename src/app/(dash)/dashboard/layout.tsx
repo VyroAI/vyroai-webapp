@@ -10,13 +10,19 @@ export const metadata = {
 
 export default function DashboardLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: {
+    token: string;
+  };
 }) {
   const cookieStore = cookies();
   if (!cookieStore.has("authorization")) {
     redirect("/login");
   }
+
+  params.token = cookieStore.get("authorization")?.value as string;
 
   return <section>{children}</section>;
 }

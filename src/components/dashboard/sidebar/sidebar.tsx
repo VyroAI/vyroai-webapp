@@ -1,38 +1,38 @@
 "use client";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 import {
   Bars3Icon,
   XMarkIcon,
-  ChatBubbleLeftEllipsisIcon,
   PaperAirplaneIcon,
 } from "@heroicons/react/24/outline";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faFolder } from "@fortawesome/free-solid-svg-icons";
+import NewChatButton from "@/components/dashboard/sidebar/newChatButton";
+import NewFolderButton from "@/components/dashboard/sidebar/folderButton";
+import ChatList from "@/components/dashboard/sidebar/chatList";
+import LoadingSpinner from "@/components/utils/spinner";
+import NavigationList from "@/components/dashboard/sidebar/navigationList";
+import { Chat, User } from "@/app/(dash)/dashboard/index.interface";
 
-import navigation from "@/components/dashboard/store/navigation";
-
-import joinClassName from "@/helper/joinClassName";
-
-const chatList = [
-  { id: 1, name: "Hello", current: true },
-  { id: 2, name: "Hello", current: false },
-  { id: 3, name: "Hello", current: false },
-  { id: 4, name: "Hello", current: false },
-];
-
-export default function Sidebar() {
+export default function Sidebar({
+  user,
+  chats,
+}: {
+  User: User;
+  chats: Chat[];
+}) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [selectedChat, setSelectedChat] = useState<number>();
+
+  useEffect(() => {
+    if (chats[0].chat_id != 0 && selectedChat == undefined) {
+      setSelectedChat(chats[0].chat_id);
+    }
+  }, [chats]);
 
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-
-      */}
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
@@ -60,7 +60,7 @@ export default function Sidebar() {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white">
+              <div className="relative flex-1 flex flex-col max-w-xs w-full bg-[#202123]">
                 <Transition.Child
                   as={Fragment}
                   enter="ease-in-out duration-300"
@@ -85,56 +85,26 @@ export default function Sidebar() {
                   </div>
                 </Transition.Child>
                 <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-                  <div className="flex-shrink-0 flex items-center px-4"></div>
+                  <div className="flex-shrink-0 flex items-center px-2">
+                    <div className="flex">
+                      <NewChatButton></NewChatButton>
+                      <NewFolderButton></NewFolderButton>
+                    </div>
+                  </div>
                   <nav className="mt-5 px-2 space-y-1">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={joinClassName(
-                          item.current
-                            ? "bg-gray-100 text-gray-900"
-                            : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",
-                          "group flex items-center px-2 py-2 text-base font-medium rounded-md"
-                        )}
-                      >
-                        <item.icon
-                          className={joinClassName(
-                            item.current
-                              ? "text-gray-500"
-                              : "text-gray-400 group-hover:text-gray-500",
-                            "mr-4 flex-shrink-0 h-6 w-6"
-                          )}
-                          aria-hidden="true"
-                        />
-                        {item.name}
-                      </a>
-                    ))}
+                    {chats[0]?.chat_id == 0 ? (
+                      <div className={"flex mt-6 justify-center"}>
+                        <LoadingSpinner></LoadingSpinner>
+                      </div>
+                    ) : (
+                      ChatList(chats, selectedChat, setSelectedChat)
+                    )}
                   </nav>
                 </div>
-                <div className="flex-shrink-0 flex border-t border-gray-200 p-4">
-                  <a
-                    href="src/components/dashboard#"
-                    className="flex-shrink-0 group block"
-                  >
-                    <div className="flex items-center">
-                      <div></div>
-                      <div className="ml-3">
-                        <p className="text-base font-medium text-gray-700 group-hover:text-gray-900">
-                          Tom Cook
-                        </p>
-                        <p className="text-sm font-medium text-gray-500 group-hover:text-gray-700">
-                          View profile
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
+                <div className=" border-gray-200 p-4">{NavigationList()}</div>
               </div>
             </Transition.Child>
-            <div className="flex-shrink-0 w-14">
-              {/* Force sidebar to shrink to fit close icon */}
-            </div>
+            <div className="flex-shrink-0 w-14"></div>
           </Dialog>
         </Transition.Root>
 
@@ -144,73 +114,25 @@ export default function Sidebar() {
           <div className="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-[#202123]">
             <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto bg-[#202123]">
               <div className="flex items-center">
-                <button
-                  className="flex w-[190px] flex-shrink-0 cursor-pointer select-none items-center gap-3 rounded-md border border-white/20 p-3 text-[14px] leading-normal text-white transition-colors duration-200 hover:bg-gray-500/10 bg-[#202123] ml-2"
-                  onClick={() => {}}
-                >
-                  <FontAwesomeIcon icon={faPlus} className={"h-[18px]"} />
-                  {"New chat"}
-                </button>
-
-                <button className="ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 rounded-md border border-white/20 p-3 text-[14px] leading-normal text-white transition-colors duration-200 hover:bg-gray-500/10 bg-black">
-                  {" "}
-                  <FontAwesomeIcon icon={faFolder} />
-                </button>
+                <NewChatButton></NewChatButton>
+                <NewFolderButton></NewFolderButton>
               </div>
-
               <nav className="mt-5 flex-1 px-2 bg-[#202123] space-y-1 ">
-                {chatList.map((item) => (
-                  <div
-                    key={item.name}
-                    className={joinClassName(
-                      item.current
-                        ? "bg-[#20210] text-white"
-                        : "text-white hover:bg-gray-50 hover:text-gray-900",
-                      "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
-                    )}
-                  >
-                    <ChatBubbleLeftEllipsisIcon
-                      className={joinClassName(
-                        item.current
-                          ? "text-gray-500"
-                          : "text-gray-400 group-hover:text-gray-500",
-                        "mr-3 flex-shrink-0 h-6 w-6"
-                      )}
-                      aria-hidden="true"
-                    />
-                    {item.name}
+                {chats[0]?.chat_id == 0 ? (
+                  <div className={"flex mt-6 justify-center"}>
+                    <LoadingSpinner></LoadingSpinner>
                   </div>
-                ))}
+                ) : (
+                  ChatList(chats, selectedChat, setSelectedChat)
+                )}
               </nav>
             </div>
-            {/*<div className="flex-shrink-0 flex border-t border-gray-200 p-4">*/}
-            {/*  {navigation.map((item) => (*/}
-            {/*    <a*/}
-            {/*      key={item.name}*/}
-            {/*      href={item.href}*/}
-            {/*      className={joinClassName(*/}
-            {/*        item.current*/}
-            {/*          ? "bg-gray-100 text-gray-900"*/}
-            {/*          : "text-gray-600 hover:bg-gray-50 hover:text-gray-900",*/}
-            {/*        "group flex items-center px-2 py-2 text-sm font-medium rounded-md"*/}
-            {/*      )}*/}
-            {/*    >*/}
-            {/*      <item.icon*/}
-            {/*        className={joinClassName(*/}
-            {/*          item.current*/}
-            {/*            ? "text-gray-500"*/}
-            {/*            : "text-gray-400 group-hover:text-gray-500",*/}
-            {/*          "mr-3 flex-shrink-0 h-6 w-6"*/}
-            {/*        )}*/}
-            {/*        aria-hidden="true"*/}
-            {/*      />*/}
-            {/*      {item.name}*/}
-            {/*    </a>*/}
-            {/*  ))}*/}
-            {/*</div>*/}
+            <div className="mt-5 px-2 bg-[#202123] space-y-1 ">
+              {NavigationList()}
+            </div>
           </div>
         </div>
-        <div className="md:pl-64 flex flex-col flex-1 relative">
+        <div className="md:pl-64 flex flex-col flex-1 ">
           <div className="sticky top-0 z-10 md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 bg-gray-100">
             <button
               type="button"
@@ -223,16 +145,14 @@ export default function Sidebar() {
           </div>
           <main className="flex-1 flex flex-col ">
             <div className="pt-6 flex-1">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+              <div className="max-w-7xl mx-auto  px-4 sm:px-6 md:px-8 flex-1">
                 <h1 className="text-2xl font-semibold text-gray-900">
                   Dashboard
                 </h1>
-              </div>
-              <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 md:px-8 flex-1">
-                <div className="w-full max-w-md fixed bottom-0">
+                <div className="w-full max-w-md fixed bottom-0 ">
                   <div className="flex items-center border border-gray-300 rounded-lg shadow-sm">
                     <input
-                      className="flex-1 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent mx-2"
+                      className="flex-1 py-2 px-4 focus:outline-none mx-2"
                       placeholder="Type your message here..."
                     />
                     <button className="send-button p-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-r-lg mx-2">
