@@ -86,8 +86,8 @@ export default function Sidebar({
                   </div>
                 </Transition.Child>
                 <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
-                  <div className="flex-shrink-0 flex items-center px-2">
-                    <div className="flex">
+                  <div className="flex-shrink-0 px-2">
+                    <div className="flex items-center">
                       <NewChatButton></NewChatButton>
                       <NewFolderButton></NewFolderButton>
                     </div>
