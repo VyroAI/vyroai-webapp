@@ -142,7 +142,7 @@ export default function RegisterForm() {
               className={"dark:text-white text-black underline"}
               href={"/login"}
             >
-              Login in
+              Login
             </Link>
           </div>
         </form>
