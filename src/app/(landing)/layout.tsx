@@ -4,7 +4,6 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "@/components/navbar/nav";
 
 import LightDarkModeButton from "@/components/darkLightMode/light-dark";
-import { ThemeProvider } from "next-themes";
 
 // @ts-ignore
 export let metadata = {
