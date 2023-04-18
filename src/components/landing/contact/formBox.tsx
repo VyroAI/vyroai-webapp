@@ -2,7 +2,7 @@ export default function FormBox() {
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="bg-white dark:shadow-md rounded p-4 max-w-md w-[400px]">
-        <h2 className="text-3xl font-extrabold mb-2">Send us a message</h2>
+        <h2 className="text-3xl font-extrabold my-8">Send us a message &#x1F680;</h2>
 
         <form>
           <div className="mb-2">
