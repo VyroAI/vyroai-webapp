@@ -34,7 +34,8 @@ const SecondHeroImage = () => {
       transition={{ duration: 0.6, delay: 0.3 }}
     >
       <Image
-        src={"https://cdn.vyroai.com/static/upload-file.webp"}
+        className={"border-[5px] dark:border-[#b3afff] border-[#b3afff]"}
+        src={"https://cdn.vyroai.com/static/upload.webp"}
         width={500}
         height={500}
         alt={"VyroAI"}
@@ -60,17 +61,25 @@ const SecondHeroSection = () => {
         transition={{ duration: 0.6, delay: 0.6 }}
       >
         <h1 className={"text-2xl font-bold dark:text-white lg:mb-2"}>
-          Effortless Training
+        Achieve new heights
         </h1>
         <p className={"dark:text-white font-semibold"}>
-          <q>
-            Say goodbye to the hassle of complicated training with our{""}
+          
+          Our product is designed to revolutionize the way you study and{" "}
             {BreakLine()}
-            effortless setup process. With our AI chatbot, all you have to do is
-            {""}
+            research. With our AI-powered technology, you can effortlessly{" "}
             {BreakLine()}
-            upload a document and voila!
-          </q>
+            process large volumes of text, allowing you to quickly and easily{" "}
+            {BreakLine()}
+            extract the key information you need. Gone are the days of spending{" "}
+            {BreakLine()}
+            hours poring over dense books and struggling to find the answers you{" "}
+            {BreakLine()}
+            need. Our AI chatbot can answer any question on the text in seconds,{" "}
+            {BreakLine()}
+            helping you to boost your productivity, improve your grades, and{" "}
+            {BreakLine()}
+            achieve your academic goals with ease.{" "}  
         </p>
       </motion.div>
       <div className={"grow"}></div>

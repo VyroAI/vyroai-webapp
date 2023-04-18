@@ -28,20 +28,18 @@ export default function ContactPage() {
       <div className={"flex lg:flex-row flex-col"}>
         <div className={"absolute mt-24 text-center block lg:hidden"}>
           <h1
-            className={"text-4xl font-extrabold dark:text-white lg:mt-[-200px]"}
+            className={"text-4xl font-extrabold dark:text-white lg:mt-[-200px] space-y-{10}"}
           >
-            Lets Chat {BreakLine()} Tell me about your project{" "}
+            Lets Chat. {BreakLine()} Tell me about your {BreakLine()}project{" "}
           </h1>
         </div>
 
         <div className="basis-1/2 h-screen hidden lg:block">
           <div className={"flex items-center justify-center min-h-screen"}>
             <h1
-              className={
-                "text-4xl font-extrabold dark:text-white lg:mt-[-200px]"
-              }
+            className={"text-4xl font-extrabold dark:text-white lg:mt-[-200px] leading-relaxed"}
             >
-              Lets Chat {BreakLine()} Tell me about your project{" "}
+              Lets Chat. {BreakLine()} Tell me about your project{" "}
             </h1>
           </div>
         </div>
