@@ -33,7 +33,7 @@ export default function RegisterPage() {
   }
   return (
     <div className={"relative"}>
-      <div className={"mt-48"}>
+      <div className={"pt-48"}>
         <AuthTitle
           text={"Register"}
           description={"Manage Your Personalized Chatbot Now"}

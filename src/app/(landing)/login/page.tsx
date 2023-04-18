@@ -34,7 +34,7 @@ export default function LoginPage() {
   }
   return (
     <div className={"relative"}>
-      <div className={"mt-48"}>
+      <div className={"pt-48"}>
         <AuthTitle
           text={"Login To Your Account"}
           description={"Manage Your Personalized Chatbot Now"}
