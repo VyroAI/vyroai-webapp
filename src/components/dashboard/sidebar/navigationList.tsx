@@ -11,6 +11,7 @@ export default function NavigationList() {
         "text-white hover:bg-gray-50  hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
       }
       onClick={() => {
+        //logout function, deletes cookies and redirects to login
         if (nav.id == 2) {
           deleteCookie("authorization");
           router.push("login");

@@ -6,11 +6,13 @@ import { deleteCookie } from "cookies-next";
 
 import { useRouter } from "next/navigation";
 import { Chat, User } from "@/app/(dash)/dashboard/index.interface";
+import MainSection from "@/components/dashboard/mainSection";
 
 export default function Dashboard({ params }: { params: { token: string } }) {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [chats, setChat] = useState<Chat[]>([{ chat_id: 0, title: "" }]);
+  const [selectedChat, setSelectedChat] = useState<number>(0);
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}v1/self`, {
@@ -35,9 +37,21 @@ export default function Dashboard({ params }: { params: { token: string } }) {
         console.log(error);
       });
   }, []);
+
   return (
     <div className={"h-full h-full"}>
-      <Sidebar user={user} chats={chats}></Sidebar>
+      <Sidebar
+        user={user}
+        chats={chats}
+        selectedChat={selectedChat}
+        setSelectedChat={setSelectedChat}
+      >
+        <MainSection
+          chatName={""}
+          selectedChat={selectedChat}
+          token={params.token}
+        ></MainSection>
+      </Sidebar>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 "use client";
-import { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 import {
@@ -18,19 +18,25 @@ import { Chat, User } from "@/app/(dash)/dashboard/index.interface";
 export default function Sidebar({
   user,
   chats,
+  children,
+  selectedChat,
+  setSelectedChat,
 }: {
   user: User | null;
   chats: Chat[];
+
+  children: React.ReactNode;
+  selectedChat: number;
+  setSelectedChat: React.Dispatch<React.SetStateAction<number>>;
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [selectedChat, setSelectedChat] = useState<number>(0);
 
-  useEffect(() => {
-    if (chats.length == 0) return;
-    if (chats[0].chat_id != 0 && selectedChat == 0) {
-      setSelectedChat(chats[0].chat_id);
-    }
-  }, [chats]);
+  // useEffect(() => {
+  //   if (chats.length == 0) return;
+  //   if (chats[0].chat_id != 0 && selectedChat == 0) {
+  //     setSelectedChat(chats[0].chat_id);
+  //   }
+  // }, [chats]);
 
   return (
     <>
@@ -114,9 +120,11 @@ export default function Sidebar({
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-[#202123]">
             <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto bg-[#202123]">
-              <div className="flex items-center">
-                <NewChatButton></NewChatButton>
-                <NewFolderButton></NewFolderButton>
+              <div className="flex-shrink-0 pr-2">
+                <div className="flex items-center">
+                  <NewChatButton></NewChatButton>
+                  <NewFolderButton></NewFolderButton>
+                </div>
               </div>
               <nav className="mt-5 flex-1 px-2 bg-[#202123] space-y-1 ">
                 {chats[0]?.chat_id == 0 ? (
@@ -144,29 +152,7 @@ export default function Sidebar({
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <main className="flex-1 flex flex-col ">
-            <div className="pt-6 flex-1">
-              <div className="max-w-7xl mx-auto  px-4 sm:px-6 md:px-8 flex-1">
-                <h1 className="text-2xl font-semibold text-gray-900">
-                  Dashboard
-                </h1>
-                <div className="w-full max-w-md fixed bottom-0 ">
-                  <div className="flex items-center border border-gray-300 rounded-lg shadow-sm">
-                    <input
-                      className="flex-1 py-2 px-4 focus:outline-none mx-2"
-                      placeholder="Type your message here..."
-                    />
-                    <button className="send-button p-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-r-lg mx-2">
-                      <PaperAirplaneIcon
-                        className="h-6 w-6 transform rotate-45"
-                        aria-hidden="true"
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </main>
+          {children}
         </div>
       </div>
     </>

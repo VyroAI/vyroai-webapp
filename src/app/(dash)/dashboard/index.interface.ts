@@ -12,4 +12,13 @@ interface User {
   created_at: string;
 }
 
-export type { Chat, User };
+interface Message {
+  id: number;
+  chat_id: number;
+  user_id: number;
+  bot: boolean;
+  message: string;
+  created_at: string;
+}
+
+export type { Chat, User, Message };
