@@ -39,7 +39,7 @@ export default function Dashboard({ params }: { params: { token: string } }) {
   }, []);
 
   return (
-    <div className={"h-full h-full"}>
+    <div className={"h-screen"}>
       <Sidebar
         user={user}
         chats={chats}

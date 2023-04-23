@@ -51,21 +51,21 @@ export default function InputBox({
   };
 
   return (
-    <div className={"flex-none  mx-auto w-full pb-10"}>
+    <div className={"flex-none mx-auto w-full lg:pb-10 pb-4"}>
       <div className={"lg:px-44 px-4"}>
         <div className="flex">
-          <input
+          <textarea
             value={postMessage}
             onKeyDown={(e) => {
               if (e.key === "Enter") sendMessage();
             }}
             onChange={(e) => setPostMessage(e.target.value)}
-            className="flex-1 px-4 focus:outline-none grow h-10 border border-black rounded-l-lg rounded-y-lg"
+            className="flex-1 px-4 focus:outline-none grow h-10 border border-black rounded-l-lg rounded-y-lg pt-1"
             placeholder="Type your message here..."
           />
           <button
             onClick={sendMessage}
-            className="send-button p-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-r-lg  flex-none w-10"
+            className="send-button p-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-r-lg flex-none w-10"
           >
             <PaperAirplaneIcon
               className="h-6 w-6 transform rotate-45"

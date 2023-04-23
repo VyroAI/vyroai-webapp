@@ -6,8 +6,14 @@ import { Chat } from "@/app/(dash)/dashboard/index.interface";
 export default function ChatList(
   chats: Chat[],
   selected: number,
-  setSelected: any
+  setSelected: any,
+  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>
 ) {
+  const onClickEvents = (chat_id: number) => {
+    setSelected(chat_id);
+    setSidebarOpen(false);
+  };
+
   return chats.map((chat) => (
     <div
       key={chat.chat_id}
@@ -17,7 +23,7 @@ export default function ChatList(
           : "text-white hover:bg-gray-50 hover:text-gray-900",
         "group flex items-center px-2 py-2 text-sm font-medium rounded-md"
       )}
-      onClick={() => setSelected(chat.chat_id)}
+      onClick={() => onClickEvents(chat.chat_id)}
     >
       <ChatBubbleLeftEllipsisIcon
         className={joinClassName(
