@@ -30,8 +30,7 @@ const HeroText = () => {
           "bg-heroButtonBlue px-4 py-2 rounded-2xl inline-flex text-white hover:scale-105 transition duration-300 ease-in-out"
         }
       >
-        Subscribe For Updates
-      </Link>
+      Empower Your Learning Now!      </Link>
     </motion.div>
   );
 };
